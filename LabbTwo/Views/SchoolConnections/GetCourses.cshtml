@@ -1,0 +1,38 @@
+﻿@model IEnumerable<LabbTwo.Models.SchoolConnection>
+@{
+    ViewData["Title"] = "GetCourses";
+}
+
+<h1>GetCourses</h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Courses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Courses.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employees.FirstName)
+                </td>
+                <td>
+                   
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
